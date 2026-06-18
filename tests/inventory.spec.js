@@ -15,8 +15,12 @@ test("login and get names", async ({page}) => {
 
     let names = [];
 
-    // let count  = await page.locator()
-    // for ()
+    let count  = await page.locator('.inventory_item').count();
+
+    for (let i = 0; i < count; i++){
+        names.push(await page.locator(".inventory_item_name ").nth(i).innerText());
+    }
+    console.log(names);
 
 
 });
