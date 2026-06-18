@@ -22,5 +22,12 @@ test("login and get names", async ({page}) => {
     }
     console.log(names);
 
+    let prices = [];
+    
+    for(let i = 0; i < count; i++){
+        prices.push(await page.locator(".inventory_item_price").nth(i).innerText());
+
+    }
+    console.log(prices);
 
 });
