@@ -30,6 +30,7 @@ test("login and get names", async ({page}) => {
 
     }
     console.log("Something wong");
+
     console.log("Price list contains these",prices);
 
     await page.locator(".btn.btn_primary.btn_small.btn_inventory ").nth(4).click();
