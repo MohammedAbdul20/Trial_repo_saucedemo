@@ -20,7 +20,7 @@ test("login and get names", async ({page}) => {
     for (let i = 0; i < count; i++){
         names.push(await page.locator(".inventory_item_name ").nth(i).innerText());
     }
-    console.log(names);
+    console.log("names List: ", names);
 
     let prices = [];
     
@@ -29,5 +29,11 @@ test("login and get names", async ({page}) => {
 
     }
     console.log(prices);
+
+    await page.locator(".btn.btn_primary.btn_small.btn_inventory ").nth(4).click();
+
+    let cartCount = await page.locator(".shopping_cart_badge").innerText();
+
+    await expect(cartCount).toBe('1');
 
 });
