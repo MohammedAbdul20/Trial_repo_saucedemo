@@ -20,6 +20,7 @@ test("login and get names", async ({page}) => {
     for (let i = 0; i < count; i++){
         names.push(await page.locator(".inventory_item_name ").nth(i).innerText());
     }
+    console.log("Something right");
     console.log("names List contains: ", names);
 
     let prices = [];
@@ -28,6 +29,7 @@ test("login and get names", async ({page}) => {
         prices.push(await page.locator(".inventory_item_price").nth(i).innerText());
 
     }
+    console.log("Something wong");
     console.log("Price list contains these",prices);
 
     await page.locator(".btn.btn_primary.btn_small.btn_inventory ").nth(4).click();
