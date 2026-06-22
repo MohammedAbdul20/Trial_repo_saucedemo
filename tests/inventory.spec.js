@@ -20,7 +20,7 @@ test("login and get names", async ({page}) => {
     for (let i = 0; i < count; i++){
         names.push(await page.locator(".inventory_item_name ").nth(i).innerText());
     }
-    console.log("names List: ", names);
+    console.log("names List contains: ", names);
 
     let prices = [];
     
